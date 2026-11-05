@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Times</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d3557;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-top: 25px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1d3557;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #eeeeee;
+        }
+
+        a {
+            color: #1d3557;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Times Cadastrados</h1>
+
+    <% if (times.length > 0) { %>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Estádio</th>
+                    <th>Cidade</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% times.forEach(time => { %>
+
+                    <tr>
+                        <td><%= time.id %></td>
+                        <td><%= time.nome %></td>
+                        <td><%= time.estadio %></td>
+                        <td><%= time.cidade %></td>
+
+                        <td>
+                            <a href="/times/<%= time.id %>">
+                                Ver detalhes
+                            </a>
+                        </td>
+                    </tr>
+
+                <% }); %>
+
+            </tbody>
+
+        </table>
+
+    <% } else { %>
+
+        <p>Nenhum time cadastrado no momento.</p>
+
+    <% } %>
+
+    <a class="voltar" href="/">Voltar para o início</a>
+
+</body>
+</html>

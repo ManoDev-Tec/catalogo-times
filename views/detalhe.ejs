@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Time</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1d3557;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #1d3557;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1><%= time.nome %></h1>
+
+        <p><strong>ID:</strong> <%= time.id %></p>
+
+        <p><strong>Estádio:</strong> <%= time.estadio %></p>
+
+        <p><strong>Cidade:</strong> <%= time.cidade %></p>
+
+        <a href="/times">Voltar para a lista</a>
+
+    </div>
+
+</body>
+</html>
